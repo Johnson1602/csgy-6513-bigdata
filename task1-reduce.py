@@ -42,4 +42,6 @@ for i in range(15):
 
 # do not forget to output the last word if needed!
 if current_key == key:
-    print '%s\t%s' % (current_key, ','.join([trip, fare]))
+    for trip in current_trips:
+        for fare in current_fares:
+            print '%s\t%s' % (current_key, ','.join([trip, fare]))
