@@ -11,7 +11,7 @@ key = None
 f = open('/Users/johnson/Documents/2019 - 2021 NYU/03_Term/2020 - 2021 Fall/CS-GY 6513 – Big Data/03_Assignments/Homework 01 Data Analysis Using Map Reduce/hw1data/test script/testdata.csv')
 
 # input comes from STDIN
-for i in range(6):
+for i in range(15):
     # remove leading and trailing whitespace
     line = f.readline()
     # remove leading and trailing whitespace
@@ -31,7 +31,13 @@ for i in range(6):
             for trip in current_trips:
                 for fare in current_fares:
                     print '%s\t%s' % (current_key, ','.join([trip, fare]))
-        current_fares.append(fares_rem) if trips_rem == '-' else current_trips.append(trips_rem)
+            # print '-'*20
+        if trips_rem == '-':
+            current_trips = []
+            current_fares = [fares_rem]
+        else:
+            current_trips = [trips_rem]
+            current_fares = []
         current_key = key
 
 # do not forget to output the last word if needed!
