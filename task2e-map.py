@@ -14,5 +14,8 @@ for line in f:
 
     date, time = keys[-1].split()
 
+    # output
+    # key: medallion & date
+    # value: 1 (1 trip record)
     print '%s\t%s' % (','.join([keys[0], date]), 1)
     result.write('%s\t%s\n' % (','.join([keys[0], date]), 1))
