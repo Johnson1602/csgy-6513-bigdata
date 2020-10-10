@@ -5,7 +5,7 @@ import sys
 
 result = open('/Users/johnson/Documents/2019 - 2021 NYU/03_Term/2020 - 2021 Fall/CS-GY 6513 – Big Data/03_Assignments/Homework 01 Data Analysis Using Map Reduce/hw1data/test script/task2c-mapper-output.csv')
 
-current_rider = 0
+current_rider = -1
 current_count = 0
 
 for line in result:
@@ -34,7 +34,7 @@ for line in result:
     if current_rider == rider:
         current_count += count
     else:
-        if current_rider:
+        if current_rider > -1:
             print '%s\t%s' % (current_rider, current_count)
         current_rider = rider
         current_count = count
