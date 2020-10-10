@@ -11,7 +11,9 @@ total_medallion = 0
 
 for line in f:
     line = line.strip()
-    driver, medallion = line.split('\t')
+    # keys are sorted first by driver, next by medallion
+    keys, value = line.split('\t')
+    driver, medallion = keys.split(',')
 
     # is the same driver?
     if current_driver == driver:

@@ -12,8 +12,8 @@ for line in f:
     key, value = line.split('\t')
     keys = key.split(',')
 
-    # output
-    # key: driver (license)
-    # value: medallion
-    print '%s\t%s' % (keys[1], keys[0])
-    result.write('%s\t%s\n' % (keys[1], keys[0]))
+    # output: because need the key to be both driver and medallion to correctly sort the records: first by driver and next by medallion
+    # key: driver (license) & medallion
+    # value: 1 (doesn't matter)
+    print '%s\t%s' % (','.join([keys[1], keys[0]]), 1)
+    result.write('%s\t%s\n' % (','.join([keys[1], keys[0]]), 1))
