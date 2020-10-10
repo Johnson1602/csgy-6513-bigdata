@@ -35,7 +35,7 @@ for line in f:
         # not the first medallion
         if current_medallion:
             avg_trips = total_trips / float(total_days)
-            print '%s\t%s,%.2f' % (current_medallion, total_trips, avg_trips)
+            print '%s\t%.2f,%.2f' % (current_medallion, total_trips, avg_trips)
         current_date = date
         current_medallion = medallion
         total_days = 1
@@ -43,4 +43,4 @@ for line in f:
 
 if current_medallion == medallion:
     avg_trips = total_trips / float(total_days)
-    print '%s\t%s,%.2f' % (current_medallion, total_trips, avg_trips)
+    print '%s\t%.2f,%.2f' % (current_medallion, total_trips, avg_trips)
