@@ -28,7 +28,7 @@ for line in f:
             print '%s\t%.2f,%.2f' % (current_date, current_total_rev, current_tips)
         current_date = date
         current_total_rev = total_rev
-        current_tips = current_tips
+        current_tips = tips
 
 if current_date == date:
     print '%s\t%.2f,%.2f' % (current_date, current_total_rev, current_tips)
