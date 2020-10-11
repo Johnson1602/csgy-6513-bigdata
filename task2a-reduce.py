@@ -37,7 +37,9 @@ for i in range(50):
 
     # this IF-switch only works because Hadoop sorts map output
     # by key (here: fare) before it is passed to the reducer
-    if (fare >= 0 and fare <= 20):
+    if (fare < 0):
+        continue
+    elif (fare <= 20):
         result['0,20'] = result['0,20'] + 1
     elif (fare <= 40):
         result['20.01,40'] = result['20.01,40'] + 1
