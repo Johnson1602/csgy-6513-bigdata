@@ -17,10 +17,9 @@ for line in f:
     if len(line.split('\t')) == 2:
         # print '--------task1--------'
 
-        keys, values = line.split('\t')
-        medallion, hack_license, vendor_id, pickup_datetime = keys.split(',')
+        join_key, values = line.split('\t')
+        medallion, hack_license, vendor_id, pickup_datetime = join_key.split(',')
 
-        join_key = medallion
         task1_rem = ','.join([hack_license, vendor_id, pickup_datetime, values])
     else:
         # print '--------licenses--------'

@@ -14,6 +14,9 @@ for line in f:
     key, value = line.split('\t')
     task_rem, licenses_rem = value.split('|')
 
+    if len(key.split(',')) == 4:
+        key = key.split(',')[0]
+
     if current_key == key:
         current_licenses.append(licenses_rem) if task_rem == '-' else current_task.append(task_rem)
     else:
