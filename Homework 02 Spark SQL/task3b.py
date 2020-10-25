@@ -14,6 +14,7 @@ if __name__ == "__main__":
                       .map(lambda x: ((x[0], x[3]), 1)) \
                       .reduceByKey(lambda x, y: x + y) \
                       .filter(lambda x: x[1] > 1) \
+                      .sortByKey() \
                       .map(lambda x: ','.join([x[0][0], x[0][1]]))
 
     more_than_one.saveAsTextFile('task3b.out')
