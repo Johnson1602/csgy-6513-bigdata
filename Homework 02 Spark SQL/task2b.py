@@ -14,6 +14,7 @@ if __name__ == "__main__":
               .map(lambda x: (x[7], 1)) \
               .reduceByKey(lambda x, y: x + y) \
               .sortByKey() \
+              .map(lambda x: ','.join([x[0], str(x[1])])) \
               .saveAsTextFile('task2b.out')
 
     sc.stop()
