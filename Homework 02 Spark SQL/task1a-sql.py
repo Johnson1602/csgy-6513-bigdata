@@ -14,12 +14,12 @@ if __name__ == "__main__":
             .getOrCreate()
 
     trips = spark.read.format('csv') \
-                 .options(header='true', inferschema='true') \
+                 .options(header='true') \
                  .load(sys.argv[1])
     trips.createOrReplaceTempView('trips')
 
     fares = spark.read.format('csv') \
-                 .options(header='true', inferschema='true') \
+                 .options(header='true') \
                  .load(sys.argv[2])
     fares.createOrReplaceTempView('fares')
 
